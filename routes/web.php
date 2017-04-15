@@ -42,15 +42,14 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
     Route::group(['prefix'=>'portfolio'], function () {
 
         Route::get('/', ['uses'=>'PortfolioController@execute', 'as'=>'portfolio']);
-        Route::match(['get','post', 'delete'], '/edit/{page}', ['uses'=>'PortfolioEditController@execute']);
         Route::match(['get','post'], '/add', ['uses'=>'PortfolioAddController@execute', 'as'=>'portfolioAdd']);
         Route::match(['get','post', 'delete'], '/edit/{portfolio}', ['uses'=>'PortfolioEditController@execute', 'as'=>'portfolioEdit']);
     });
 
     Route::group(['prefix'=>'services'], function () {
 
-        Route::get('/', ['uses'=>'ServiceController@execute', 'as'=>'services']);
-        Route::match(['get','post'], '/add', ['uses'=>'ServiceAddController@execute', 'as'=>'serviceAdd']);
-        Route::match(['get','post', 'delete'], '/edit/{service}', ['uses'=>'ServiceEditController@execute', 'as'=>'serviceEdit']);
+        Route::get('/', ['uses'=>'ServicesController@execute', 'as'=>'services']);
+        Route::match(['get','post'], '/add', ['uses'=>'ServicesAddController@execute', 'as'=>'servicesAdd']);
+        Route::match(['get','post', 'delete'], '/edit/{service}', ['uses'=>'ServicesEditController@execute', 'as'=>'servicesEdit']);
     });
 });

@@ -64,7 +64,7 @@ class PeoplesAddController extends Controller
 
         } 
 
-        if (view()->exists('admin.peoples_add')){
+        if (view()->exists('admin.peoples.peoples_add')){
 
             $data = [
 
@@ -72,7 +72,7 @@ class PeoplesAddController extends Controller
                     
                     ];
 
-            return view('admin.peoples_add', $data);
+            return view('admin.peoples.peoples_add', $data);
  
         }
 

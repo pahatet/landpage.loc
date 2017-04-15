@@ -11,7 +11,7 @@ class PeoplesController extends Controller
     //
     public function execute(){
 
-        if (view()->exists('admin.peoples')){
+        if (view()->exists('admin.peoples.peoples')){
 
             $peoples = People::all();
 
@@ -21,7 +21,7 @@ class PeoplesController extends Controller
                     'peoples' => $peoples,
                     ];
 
-            return view('admin.peoples', $data);
+            return view('admin.peoples.peoples', $data);
  
         }
 
